@@ -5,6 +5,9 @@ class ReverseInt:
         nest=[]
         for i in range(len(z)-1,-1,-1):
             nest.append(z[i])
+            if nest[-1]=="-":
+               nest[0]="-"
+        
 
         nint=int(''.join(nest)) 
         nistr=str(nint)    
@@ -14,5 +17,5 @@ class ReverseInt:
         nlast=int(''.join(nilist))   
         return nlast  
 obj=ReverseInt()
-result=obj.Solution(93)   
+result=obj.Solution(-93)   
 print(result)
