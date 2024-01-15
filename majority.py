@@ -1,16 +1,20 @@
-class solution:
-    def majority(self,nums:[])->int:
-        count=0
-        cand=0
-        n=len(nums)
-        for i in range(n-1):
-            if count==0:
-                cand=nums[i]
-            if cand==nums[i]:
-                count+=1
+class Solution:
+    def majority(self, nums: []) -> int:
+        count = 0
+        cand = 0
+        n = len(nums)
+
+        for num in nums:
+            if count == 0:
+                cand = num
+            if num==cand:
+                count += 1
             else:
-                count-=1
-        return cand           
-obj=solution()    
-result=obj.majority([88,22,11,11])
+                count -= 1
+
+        return cand
+
+# Example usage:
+obj = Solution()
+result = obj.majority([2,2,2,3,4,1,6,7])
 print(result)
